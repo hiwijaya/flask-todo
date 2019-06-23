@@ -1,0 +1,28 @@
+input[type=checkbox]{
+  display: none;
+}
+
+input[type=checkbox] + label{
+  font-family: 'fontawesome', arial, sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+}
+
+input[type=checkbox] + label:before {
+  display: inline-block;
+  font-size: 1.6em;
+  width: 1.2em;
+  vertical-align: -5%;
+  color: #88C0D0;
+  content: '\f096';
+}
+
+input[type=checkbox]:checked + label:before {
+  display: inline-block;
+  font-size: 1.6em;
+  width: 1.2em;
+  vertical-align: -5%;
+  color: #88C0D0;
+  content: '\f14a';
+}

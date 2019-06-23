@@ -47,9 +47,8 @@ button:focus {
     outline: none;
 }
 /* -- CSS RESET -- */
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Rubik';
 }
 
 .container {
@@ -62,20 +61,22 @@ body {
     justify-content: center;
     align-items: center;
     flex: 1;
+    background-color: #FFFFFF;
 }
 .todo-image-box img {
-    width: 80%;
+    width: 50%;
 }
 .todo-app-box {
     width: 600px;
     padding: 50px;
-    background-color: #F4F7F6;
+    background-color: #F8F9FB;
     overflow-y: auto;
 }
 .title {
     font-size: 22pt;
     font-weight: 700;
     margin-bottom: 30px;
+    color: #4C566A;
 }
 .input-box {
     margin: 20px 0;
@@ -137,9 +138,9 @@ body {
 .add-button {
     height: 50px;
     width: 100%;
-    background-color: #739387;
+    background-color: #5E81AC;
     color: #fff;
-    border:1px solid #739387;
+    border:1px solid #5E81AC;
     border-radius: 10px;
     font-size: 14pt;
     font-weight: 700;
@@ -173,11 +174,13 @@ body {
 }
 .task-title {
     font-size: 14pt;
+    font-weight: 500;
+    color: #4c566a;
 }
 .task-detail {
     font-size: 12pt;
     margin-left: 35px;
-    color: #595959;
+    color: #4c566a;
 }
 
 
