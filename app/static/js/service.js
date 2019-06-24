@@ -39,7 +39,7 @@ function renderList() {
     // ref: https://www.nickang.com/add-event-listener-for-loop-problem-in-javascript/ 
     tasks.forEach(function (t, i) {
 
-        // render elements programatically
+        // render elements programmatically
         var taskItem = document.createElement('DIV');
         taskItem.classList.add('task-item');
 
