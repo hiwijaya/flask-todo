@@ -13,12 +13,15 @@ class Task(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100), nullable=False)
-    subtitle = db.Column(db.String(300))
+    detail = db.Column(db.String(300))
     status = db.Column(db.String(10), nullable=False, default=STATUS_ACTIVE)
     create_date = db.Column(db.DateTime, default=now)
     done_date = db.Column(db.DateTime)
 
-    # create __iter__
-
-
-
+    def __iter__(self):
+        yield 'id', self.id
+        yield 'title', self.title
+        yield 'detail', self.detail
+        yield 'status', self.status
+        yield 'create_date', self.create_date
+        yield 'done_date', self.done_date
