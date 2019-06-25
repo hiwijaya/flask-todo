@@ -1,9 +1,9 @@
 from flask import Blueprint
-from .lib import *
 from .service import *
 
 
 api_blueprint = Blueprint('api', __name__)
+
 
 @api_blueprint.route('/api/get-tasks', methods=['GET'])
 def api_get_task():

@@ -85,7 +85,7 @@ body {
     height: 50px;
     width: 100%;
     padding: 0 10px;
-    border:1px solid #739387;
+    border:1px solid #4E81AC;
     border-radius: 10px;
     font-size: 12pt;
     box-sizing: border-box;
@@ -125,11 +125,11 @@ body {
     align-items: center;
 }
 .save-button {
-    background-color: #739387;
+    background-color: #4E81AC;
     color: #fff;
     height: 30px;
     width: 100px;
-    border:1px solid #739387;
+    border:1px solid #4E81AC;
     border-radius: 5px;
     font-size: 10pt;
     font-weight: 700;
