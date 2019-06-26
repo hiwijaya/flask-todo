@@ -10,10 +10,12 @@
     <link href="https://fonts.googleapis.com/css?family=Rubik:400,500,700&display=swap" rel="stylesheet">
     <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ url_for('static', filename='css/checkbox.css') }}" rel="stylesheet" type="text/css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js" type="text/javascript"></script>
 </head>
 
-<body>
-    <div class="container">
+<body ng-app="app">
+    <div class="container" ng-controller="TaskCtrl" ng-init="init()">
         <div class="todo-image-box">
             <img src="{{ url_for('static', filename='img/undraw_taking_notes.svg') }}" alt="todo-images" />
         </div>
@@ -30,13 +32,21 @@
                 <div class="task-detail">
                     Learn more about Flask, Django, and don't forget to always follow PEP8 style guide.
                 </div>
-
             </div>
 
 
 
             <div id="task-list" class="task-list">
                 <!-- render task-item programatically -->
+
+                <div class="task-item" ng-repeat="task in tasks">
+                    <div class="md-checkbox">
+                        <input id="$index" type="checkbox" checked>
+                        <label for="$index" class="task-title" ng-bind="task.title"></label>
+                    </div>
+                    <div class="task-detail" ng-bind="task.detail"></div>
+                </div>
+
             </div>
 
             <div id="box-empty" class="empty-box">
@@ -59,10 +69,7 @@
         </div>
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"
-            type="text/javascript"></script>
-    <script src="{{ url_for('static', filename='js/service.js') }}"
-            type="text/javascript"></script>
+    <script src="{{ url_for('static', filename='js/ngservice.js') }}" type="text/javascript"></script>
 </body>
 
 </html>
