@@ -85,8 +85,8 @@ body {
     height: 50px;
     width: 100%;
     padding: 0 10px;
-    border:1px solid #4E81AC;
-    border-radius: 10px;
+    border: 1.5px solid #4E81AC;
+    border-radius: 8px;
     font-size: 12pt;
     box-sizing: border-box;
     margin-bottom: 10px;
@@ -95,14 +95,14 @@ body {
     width: 100%;
     height: 100px;
     padding: 10px;
-    border: 1px solid #739387;
-    border-radius: 10px;
+    border: 1.5px solid #4E81AC;
+    border-radius: 8px;
     box-sizing: border-box;
     font-size: 12pt;
     resize: none;
 }
 .input-task::placeholder, .input-detail::placeholder {
-    color: #c4d4cf;
+    color: #D8DEE9;
 }
 .desc-icon {
     width: 25px;
@@ -111,7 +111,7 @@ body {
 }
 .details-button, .cancel-button {
     text-decoration: none;
-    color: #739387;
+    color: #81A1C1;
     font-size: 12pt;
     font-weight: 700;
 }
@@ -125,11 +125,11 @@ body {
     align-items: center;
 }
 .save-button {
-    background-color: #4E81AC;
+    background-color: #5E81AC;
     color: #fff;
     height: 30px;
     width: 100px;
-    border:1px solid #4E81AC;
+    border:1px solid #5E81AC;
     border-radius: 5px;
     font-size: 10pt;
     font-weight: 700;
@@ -138,17 +138,17 @@ body {
 .add-button {
     height: 50px;
     width: 100%;
-    background-color: #5E81AC;
+    background-color: #88C0D0;
     color: #fff;
-    border:1px solid #5E81AC;
-    border-radius: 10px;
+    border:1px solid #88C0D0;
+    border-radius: 8px;
     font-size: 14pt;
     font-weight: 700;
     cursor: pointer;
 }
 .empty-box {
     text-align: center;
-    color: #bfbfbf;
+    color: #7B88A1;
     font-size: 14pt;
     height: 50px;
 }
@@ -181,6 +181,7 @@ body {
     font-size: 12pt;
     margin-left: 35px;
     color: #4c566a;
+    line-height: 1.3em;
 }
 
 

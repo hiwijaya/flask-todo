@@ -22,35 +22,20 @@
         <div class="todo-app-box">
             <h1 class="title">My Todo</h1>
 
-
-
-            <div class="task-item">
-                <div class="md-checkbox">
-                    <input id="i2" type="checkbox" checked>
-                    <label for="i2" class="task-title">Deep dive more about Python</label>
-                </div>
-                <div class="task-detail">
-                    Learn more about Flask, Django, and don't forget to always follow PEP8 style guide.
-                </div>
-            </div>
-
-
-
-            <div id="task-list" class="task-list">
-                <!-- render task-item programatically -->
-
+            <div id="task-list" class="task-list" ng-if="tasks.length > 0">
                 <div class="task-item" ng-repeat="task in tasks">
+                    {% raw %}
                     <div class="md-checkbox">
-                        <input id="$index" type="checkbox" checked>
-                        <label for="$index" class="task-title" ng-bind="task.title"></label>
+                        <input id="{{ 'c' + $index }}" type="checkbox" checked>
+                        <label for="{{ 'c' + $index }}" class="task-title" ng-bind="task.title"></label>
                     </div>
                     <div class="task-detail" ng-bind="task.detail"></div>
+                    {% endraw %}
                 </div>
-
             </div>
 
-            <div id="box-empty" class="empty-box">
-                You have no task...
+            <div id="box-empty" class="empty-box" ng-if="tasks.length === 0">
+                You have no task.
             </div>
 
             <div id="box-input" class="input-box">
@@ -59,13 +44,13 @@
                 <div class="input-button-box">
                     <a id="btn-detail" class="details-button" href="#">Add details</a>
                     <div>
-                        <a id="btn-cancel" class="cancel-button" href="#">Cancel</a>
+                        <a id="btn-cancel" class="cancel-button" href="#" ng-click="reset()">Cancel</a>
                         <button id="btn-save" class="save-button" type="button">Save</button>
                     </div>
                 </div>
             </div>
 
-            <button id="btn-add" class="add-button" type="button">+ New Task</button>
+            <button id="btn-add" class="add-button" type="button" ng-click="newTask()">+ New Task</button>
         </div>
     </div>
 
