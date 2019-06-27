@@ -26,7 +26,7 @@
                 <div class="task-item" ng-repeat="task in tasks">
                     {% raw %}
                     <div class="md-checkbox">
-                        <input id="{{ 'c' + $index }}" type="checkbox" checked>
+                        <input id="{{ 'c' + $index }}" type="checkbox" ng-click="isDone($event)">
                         <label for="{{ 'c' + $index }}" class="task-title" ng-bind="task.title"></label>
                     </div>
                     <div class="task-detail" ng-bind="task.detail"></div>
@@ -45,7 +45,7 @@
                     <a id="btn-detail" class="details-button" href="#">Add details</a>
                     <div>
                         <a id="btn-cancel" class="cancel-button" href="#" ng-click="reset()">Cancel</a>
-                        <button id="btn-save" class="save-button" type="button">Save</button>
+                        <button id="btn-save" class="save-button" type="button" ng-click="saveTask()">Save</button>
                     </div>
                 </div>
             </div>

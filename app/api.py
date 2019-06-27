@@ -18,7 +18,7 @@ def api_save_task():
     
     # TODO: validate request
 
-    task_id = get_parameter('task_id')
+    task_id = get_parameter('id')
     title = get_parameter('title')
     detail = get_parameter('detail')
     status = get_parameter('status')

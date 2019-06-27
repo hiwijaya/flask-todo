@@ -54,5 +54,42 @@ app.controller('TaskCtrl',
         }
 
 
+        $scope.saveTask = function(index) {
+
+            var title = txtTask.value;
+            var detail = txtDetail.value;
+
+            var request = {
+                id: index,
+                title: title,
+                detail: detail
+            }
+
+
+            $http({
+                method: 'POST',
+                url: '/api/save-task',
+                data: request
+            }).then(function success(response) {
+                console.log(response.data);
+                $scope.init();
+                $scope.reset();
+
+            }, function fail(response) {
+                console.log(response);
+            });
+
+        }
+
+        $scope.isDone = function(event){
+            var currentId = event.target.id;
+
+            alert(currentId);
+
+
+
+        }
+
+
 
     });

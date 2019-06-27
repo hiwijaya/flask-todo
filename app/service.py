@@ -8,12 +8,12 @@ def get_tasks():
     return tasks
 
 
-def get_task(id):
+def get_task(task_id):
 
-    if id is None:
+    if task_id is None:
         return None
 
-    task = Task.query.filter(Task.id == id).first()
+    task = Task.query.filter(Task.id == task_id).first()
     return task
 
 
