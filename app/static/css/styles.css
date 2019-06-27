@@ -183,7 +183,17 @@ body {
     color: #4c566a;
     line-height: 1.3em;
 }
-
+.task-title-disabled {
+    font-size: 14pt;
+    font-weight: 500;
+    color: #B8B9BA;
+}
+.task-detail-disabled {
+    font-size: 12pt;
+    margin-left: 35px;
+    color: #B8B9BA;
+    line-height: 1.3em;
+}
 
 
 @media screen and (max-width: 1000px) {

@@ -4,7 +4,7 @@ from .lib import *
 
 
 def get_tasks():
-    tasks = Task.query.all()
+    tasks = Task.query.order_by(Task.create_date).all()
     return tasks
 
 
@@ -17,7 +17,7 @@ def get_task(task_id):
     return task
 
 
-def save_task(task_id, title, detail, status, create_date):
+def save_task(task_id, title, detail, status):
 
     is_new_task = False
 
@@ -29,7 +29,9 @@ def save_task(task_id, title, detail, status, create_date):
     task.title = title
     task.detail = detail
     task.status = status
-    task.create_date = create_date
+
+    if status == Task.STATUS_DONE:
+        task.done_date = now()
 
     if is_new_task:
         db.session.add(task)

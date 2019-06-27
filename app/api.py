@@ -16,15 +16,14 @@ def api_get_task():
 @api_blueprint.route('/api/save-task', methods=['POST'])
 def api_save_task():
     
-    # TODO: validate request
+    # TODO: validate request and SECURE YOUR API!!
 
     task_id = get_parameter('id')
     title = get_parameter('title')
     detail = get_parameter('detail')
     status = get_parameter('status')
-    create_date = get_parameter('create_date')
 
-    task = save_task(task_id, title, detail, status, create_date)
+    task = save_task(task_id, title, detail, status)
     task = object_to_dict(task)
 
     return EasyResponse(task).get_json_response()

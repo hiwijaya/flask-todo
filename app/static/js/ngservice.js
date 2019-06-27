@@ -54,22 +54,35 @@ app.controller('TaskCtrl',
         }
 
 
-        $scope.saveTask = function(index) {
-
+        $scope.save = function(index) {
             var title = txtTask.value;
             var detail = txtDetail.value;
 
-            var request = {
+            var task = {
                 id: index,
                 title: title,
                 detail: detail
             }
 
+            saveTask(task);
+        }
 
+        $scope.isDone = function(index) {
+            if(confirm('Are you done with this task?')) {
+                var task = $scope.tasks[index];
+                task.status = 'DONE';
+                saveTask(task);
+            }
+        }
+
+        
+
+        function saveTask(task){
+            
             $http({
                 method: 'POST',
                 url: '/api/save-task',
-                data: request
+                data: task
             }).then(function success(response) {
                 console.log(response.data);
                 $scope.init();
@@ -78,18 +91,6 @@ app.controller('TaskCtrl',
             }, function fail(response) {
                 console.log(response);
             });
-
         }
-
-        $scope.isDone = function(event){
-            var currentId = event.target.id;
-
-            alert(currentId);
-
-
-
-        }
-
-
 
     });
