@@ -158,7 +158,19 @@ body {
     margin: 10px 0;
 }
 .task-item {
+    display: flex;
+    flex-direction: row;
     margin-bottom: 30px;
+}
+.task-delete {
+    display: flex;
+    width: 50px;
+    justify-content: center;
+    align-items: center;
+}
+.task-delete-icon {
+    width: 16px;
+    height: 16px;
 }
 .task-title-box {
     display: flex;

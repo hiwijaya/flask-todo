@@ -25,15 +25,22 @@
             <div id="task-list" class="task-list" ng-if="tasks.length > 0">
                 <div class="task-item" ng-repeat="task in tasks">
                     {% raw %}
-                    <div class="md-checkbox">
-                        <input id="{{ 'c' + $index }}" type="checkbox" ng-click="isDone($index)" 
-                            ng-checked="task.status == 'DONE'" ng-disabled="task.status == 'DONE'">
-                        <label for="{{ 'c' + $index }}" ng-bind="task.title"
-                            ng-class="(task.status == 'DONE') ? 'task-title-disabled' : 'task-title'"></label>
+                    <div style="flex: 1">
+                        <div class="md-checkbox">
+                            <input id="{{ 'c' + $index }}" type="checkbox" ng-click="isDone($index)"
+                                ng-checked="task.status == 'DONE'" ng-disabled="task.status == 'DONE'">
+                            <label for="{{ 'c' + $index }}" ng-bind="task.title"
+                                ng-class="(task.status == 'DONE') ? 'task-title-disabled' : 'task-title'"></label>
+                        </div>
+                        <div class="task-detail" ng-bind="task.detail"
+                            ng-class="(task.status == 'DONE') ? 'task-detail-disabled' : 'task-detail'"></div>
                     </div>
-                    <div class="task-detail" ng-bind="task.detail"
-                        ng-class="(task.status == 'DONE') ? 'task-detail-disabled' : 'task-detail'"></div>
                     {% endraw %}
+                    <div class="task-delete">
+                        <a href="#">
+                            <img class="task-delete-icon" src="{{ url_for('static', filename='img/delete.png') }}" alt="delete-icon" />
+                        </a>
+                    </div>
                 </div>
             </div>
 
