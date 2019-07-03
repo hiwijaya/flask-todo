@@ -37,8 +37,9 @@
                     </div>
                     {% endraw %}
                     <div class="task-delete">
-                        <a href="#">
-                            <img class="task-delete-icon" src="{{ url_for('static', filename='img/delete.png') }}" alt="delete-icon" />
+                        <a href="#" ng-click="delete(task.id)">
+                            <img class="task-delete-icon" src="{{ url_for('static', filename='img/delete.png') }}"
+                                 alt="Delete" />
                         </a>
                     </div>
                 </div>

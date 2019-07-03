@@ -40,3 +40,11 @@ def save_task(task_id, title, detail, status):
 
     return task
 
+
+def delete_task(task_id):
+
+    task = get_task(task_id)
+
+    db.session.delete(task)
+    db.session.commit()
+

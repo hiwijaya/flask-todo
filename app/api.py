@@ -27,3 +27,13 @@ def api_save_task():
     task = object_to_dict(task)
 
     return EasyResponse(task).get_json_response()
+
+
+@api_blueprint.route('/api/delete-task', methods=['POST'])
+def api_delete_task():
+
+    task_id = get_parameter('id')
+
+    delete_task(task_id)
+
+    return EasyResponse().get_json_response()

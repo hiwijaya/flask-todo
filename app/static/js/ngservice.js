@@ -67,6 +67,7 @@ app.controller('TaskCtrl',
             saveTask(task);
         }
 
+
         $scope.isDone = function(index) {
             if(confirm('Are you done with this task?')) {
                 var task = $scope.tasks[index];
@@ -75,9 +76,24 @@ app.controller('TaskCtrl',
             }
         }
 
-        
 
-        function saveTask(task){
+        $scope.delete = function(task_id) {
+
+            if(confirm('Are you sure?')) {
+                $http({
+                    method: 'POST',
+                    url: '/api/delete-task',
+                    data: {id: task_id}
+                }).then(function success(response) {
+                    $scope.init();
+
+                }, function fail(response) {
+                    console.log(response);
+                });
+            }
+        }
+
+        function saveTask(task) {
             
             $http({
                 method: 'POST',
@@ -92,5 +108,6 @@ app.controller('TaskCtrl',
                 console.log(response);
             });
         }
+
 
     });

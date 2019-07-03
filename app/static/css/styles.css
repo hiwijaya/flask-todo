@@ -162,7 +162,11 @@ body {
     flex-direction: row;
     margin-bottom: 30px;
 }
+.task-item:hover .task-delete {
+    visibility: visible;
+}
 .task-delete {
+    visibility: hidden;
     display: flex;
     width: 50px;
     justify-content: center;
